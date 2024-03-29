@@ -5,10 +5,10 @@ from typing import List
 # kadane
 def maxSubarraySumCircular(nums: List[int]) -> int:
     curMaxSum = 0
-    maxSum = 0
+    maxSum = nums[0]
 
     curMinSum = 0
-    minSum = 0
+    minSum = nums[0]
 
     sum = 0
     for n in nums:
