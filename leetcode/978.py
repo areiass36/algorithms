@@ -1,6 +1,6 @@
 from typing import List
 
-
+# https://leetcode.com/problems/longest-turbulent-subarray/
 class Solution:
     def maxTurbulenceSize(self, arr: List[int]) -> int:
         curGreater = 1
