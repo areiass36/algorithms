@@ -1,17 +1,14 @@
-def slidingWindow(array: [int], k: int):
-    L = 0
-    R = min(k, len(array) - 1)
-    looked = set()
-    while L < len(array):
-        print(R)
-        if array[L] in looked:
+def slidingWindow(nums: [int], k: int):
+    map = {}
+    for i in range(len(nums)):
+        cur = nums[i]
+        if cur in map and abs(i - map[cur]) <= k:
             return True
-        looked.add(array[L])
-        L += 1
-        if L == R:
-            R += k 
-            looked.clear()
+        map[cur] = i
     return False
 
 
-print(slidingWindow([1, 2, 4, 0, 4, 5], 2))
+print(slidingWindow([1, 2, 3, 1], 3))
+print(slidingWindow([1, 0, 1, 1], 1))
+print(slidingWindow([1, 2, 3, 1, 2, 3], 2))
+print(slidingWindow([4, 1, 2, 3, 1, 5], 3))
